@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { encodeToMorse, decodeFromMorse } from "./lib/morse/morse";
-import { MORSE_CFG as cfg } from "./lib/morse/morse.config";
+import { GLOBAL_CFG as gcfg } from "./lib/global.config";
+import { MORSE_CFG as mcfg } from "./lib/morse/morse.config";
 import "./App.css";
 
 type Mode = "encode" | "decode";
@@ -11,8 +12,8 @@ export default function App() {
   const [output, setOutput] = useState("");
 
   // settings (user can tweak)
-  const [letterSep, setLetterSep] = useState<string>(cfg.meta.letter_sep_default);
-  const [wordSep, setWordSep] = useState<string>(cfg.meta.word_sep_default);
+  const [letterSep, setLetterSep] = useState<string>(mcfg.meta.letter_sep_default);
+  const [wordSep, setWordSep] = useState<string>(mcfg.meta.word_sep_default);
 
   useEffect(() => {
     if (mode === "encode") {
@@ -85,7 +86,8 @@ export default function App() {
       </main>
 
       <footer>
-        <small>الفواصل الافتراضية: حرف = {cfg.meta.letter_sep_default} ، كلمة = {cfg.meta.word_sep_default}</small>
+        <small>الفواصل الافتراضية: حرف = {mcfg.meta.letter_sep_default} ، كلمة = {mcfg.meta.word_sep_default}</small>
+        <small>v{gcfg.version}</small>
       </footer>
     </div>
   );
