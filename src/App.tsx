@@ -6,7 +6,7 @@ import "./App.css";
 type Mode = "encode" | "decode";
 
 export default function App() {
-  const [mode, setMode] = useState<Mode>("encode");
+  const [mode, setMode] = useState<Mode>("decode");
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
 
