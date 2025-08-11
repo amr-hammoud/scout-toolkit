@@ -87,8 +87,8 @@ export default function App() {
 
       <footer>
         <small>الفواصل الافتراضية: حرف = {mcfg.meta.letter_sep_default} ، كلمة = {mcfg.meta.word_sep_default}</small>
-        <small>v{gcfg.version}</small>
       </footer>
+      <small>v{gcfg.version}</small>
     </div>
   );
 }
