@@ -1,0 +1,13 @@
+// Live demo of scout-toolkit at scout-toolkit.amrhammoud.com (Cloudflare Workers static assets).
+// Build: `npm run build` → dist/. Single-page app: unknown paths serve index.html.
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "scout-toolkit-demo",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./dist", "not_found_handling": "single-page-application" },
+  "workers_dev": false,
+  "preview_urls": true,
+  // Required by `wrangler preview`, which Workers Builds runs for non-production branches.
+  "previews": {},
+  "routes": [{ "pattern": "scout-toolkit.amrhammoud.com", "custom_domain": true }]
+}
